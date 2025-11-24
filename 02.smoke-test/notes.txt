@@ -1,0 +1,22 @@
+# System Scalability
+- There are various ways to scale your servers:
+1. Vertical scaling (scaling up) : adding more memory or faster cpu for your server. This one has physical limits.
+2. Horizontal scaling (scaling out) : adding more servers  to handle increased load distributing the traffic amongst them.
+
+# Types of Tests By k6
+- There are various types of test offered by K6. They are
+
+1. Performance Test
+- used for simulating significant of users trying to use the application at once.
+- Categories which fall under this test are load test (multiple users accessing the system concurrently). Stress test (pushing the system to its breaking point). Spike test (suddenly increasing and decreasing the load in the system. Shows how system handles sudden load and if it stays stable afterwards.)
+
+2. Smoke Test
+- Used to check if test script written and application are working.
+- This test checks the basic functionality of a system.
+-
+
+
+
+
+
+

@@ -1,0 +1,15 @@
+# Load Test
+- This is testing an application under a typical load.
+- This is based on empirical data for the busiest hour of the day.
+- Estimate the number of tipical users for load test
+- Users increase and decrease over time and simulate the way users behave all the time.
+- Pick ramp up time and ramp down time.
+- Typical ramp up time is 10% of the duration
+- Typical ramp down time is 10% of the duration
+
+
+
+
+
+
+

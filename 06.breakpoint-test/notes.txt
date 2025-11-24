@@ -1,0 +1,13 @@
+# Breakpoint Testing
+- This is done to test the maximum load the application will handle before crashing.
+- Increases the load from 0 upto a very high value.
+- The idea is to find where the application starts breaking.
+- Write down the number of users at the break point
+- Should not be done on prod.
+
+
+
+
+
+
+

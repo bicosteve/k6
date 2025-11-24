@@ -1,0 +1,2 @@
+test:
+	k6 run test.js

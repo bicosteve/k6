@@ -1,0 +1,40 @@
+# Test Environment
+- check that no other user will be disturbed
+- make sure that your test is not affected by other traffics
+- make sure your test can be replicated easily.
+
+# Basic Performance Testing
+1. VUS -> Virtual Users : Not real users sort of robots
+2. Request -> asking for something on the internet
+3. Latency -> Waiting time between request and getting response. Used to check how fast or slow a site is.
+4. Throughput -> Shows the number of requests handled over a period of time. High throughput means many requests can be served quickly, low throughput means few users can be served.
+5. Iterations -> repeating multiple requests over time
+
+
+# Specifying VUs and test duration
+-
+
+data_received..................: 1.2 MB 117 kB/s
+data_sent......................: 39 kB  3.8 kB/s
+http_req_blocked...............: avg=19.87ms  min=0s       med=1µs      max=804.95ms p(90)=1µs      p(95)=2µs
+http_req_connecting............: avg=5.49ms   min=0s       med=0s       max=341.61ms p(90)=0s       p(95)=0s
+http_req_duration..............: avg=140.39ms min=6.4ms    med=205.69ms max=358.11ms p(90)=269.59ms p(95)=271.04ms
+{ expected_response:true }...: avg=140.39ms min=6.4ms    med=205.69ms max=358.11ms p(90)=269.59ms p(95)=271.04ms
+http_req_failed................: 0.00%  0 out of 636
+http_req_receiving.............: avg=208.42µs min=10µs     med=73µs     max=5.58ms   p(90)=465.5µs  p(95)=846.24µs
+http_req_sending...............: avg=122.35µs min=15µs     med=100.5µs  max=2.36ms   p(90)=199µs    p(95)=246µs
+http_req_tls_handshaking.......: avg=5.75ms   min=0s       med=0s       max=337.1ms  p(90)=0s       p(95)=0s
+http_req_waiting...............: avg=140.06ms min=6.29ms   med=205.42ms max=357.85ms p(90)=269.23ms p(95)=270.42ms
+** http_reqs......................: 636    61.74861/s  made 636 requests
+iteration_duration.............: avg=320.77ms min=271.74ms med=276.61ms max=1.55s    p(90)=293.52ms p(95)=345.73ms
+** iterations.....................: 318    30.874305/s -> get() ran 318 times
+vus............................: 10     min=10       max=10
+vus_max........................: 10     min=10       max=10
+
+
+# Understanding Test Results
+- You need to understand the metrics and how to fix them before they affect real peaple.
+- These are:
+ * http_request_duration -> shows the duration between sending request and receiving response. Metrics like p(90) or p(95) means the p(percentile) where faster than the duration shown eg p(90)=402.87ms, p(95)=404.09ms
+
+

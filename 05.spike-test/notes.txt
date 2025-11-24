@@ -1,0 +1,15 @@
+# Spike Test
+- This is done to test surprise increase in number of users.
+- This is like dropping a huge track on a bridge from a plane!
+- Done during new product launch or when there are commercial activities on the tv.
+- The number of users will be different from anything which has ever been witnessed before.
+- Many users will hit the application but it is expected they will not stick around that much.
+- The number of users should be made 4-5 times your load test.
+-
+
+
+
+
+
+
+

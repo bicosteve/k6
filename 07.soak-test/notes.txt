@@ -1,0 +1,13 @@
+# Soak Test
+- Take a load test and stretch its duration
+- This test is done to figure out issues that might occur after a long period
+- Leaks are when the program hold onto memory it does not need anymore and this makes it slow down.
+- Disk space may be overwritten.
+-
+
+
+
+
+
+
+

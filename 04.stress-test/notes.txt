@@ -1,0 +1,15 @@
+# Stress Test
+- The type of test which puts above average high condition on an application.
+- This tests how an application will perform under above average conditions.
+- It has ramp up and ramp down periods.
+- This will help you know the degradation stage.
+- Try to check if during the ramp down, the application performance comes back to normal value.
+- make sure to increase the loads in stages in terms of percentage eg 10% , 50% etc.
+-
+
+
+
+
+
+
+
