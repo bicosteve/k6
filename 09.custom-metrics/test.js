@@ -1,37 +1,34 @@
 import { check, sleep } from 'k6';
 import exec from 'k6/execution';
 import http from 'k6/http';
+import { Counter, Trend } from 'k6/metrics';
 
 // For threshholds
 export const options = {
-  vus: 10,
-  duration: '10s',
+  vus: 5,
+  duration: '5s',
   thresholds: {
-    // thresholds
-    http_req_duration: ['p(95)<100'],
-    // the slowest http req should take less than 2s
+    http_req_duration: ['p(95)<250'],
     http_req_duration: ['max<2000'],
-    // metric types & aggregation
     http_reqs: ['count>20'],
-    // rate -> checks how many requests have been sent per second
-    // make sure more than 4 reqs are sent per second
     http_reqs: ['rate>4'],
-    // gauge metric -> value of something at a particular point in time.
-    // make sure virtual users are above 9 all the times
-    vus: ['value>9'],
-    // rate type -> shows how many non-zero values occurs at times
-    // rate is calculated by dividing successful events by total events
-    // rate value is between 0.00 and 1.00
+    vus: ['value>4'],
     http_req_failed: ['rate<0.01'],
     http_req_failed: ['rate<5'],
     checks: ['rate>=0.98'],
+    my_counter: ['count>10'],
+    response_time_news_page: ['p(95)<150', 'p(99)<250'],
   },
 };
 
+let myCounter = new Counter('my_counter');
+let newsPageResponseTrend = new Trend('response_time_news_page');
+
 export default function () {
   // 1. http requests
-  const res = http.get('https://test.k6.io');
-
+  let res = http.get('https://test.k6.io');
+  myCounter.add(1);
+  // will count the number of time this function ran
   // Using exec
   console.log(exec.scenario.iterationInTest);
   // returns the number of iterations
@@ -57,5 +54,9 @@ export default function () {
   // 5. Configuring threshholds
   sleep(2);
 
-  // 6. Metric Types
+  // Using Metrics
+  res = http.get('https://test.k6.io/news.php');
+  newsPageResponseTrend.add(res.timings.duration);
+  // checks duration of this request
+  sleep(1);
 }
