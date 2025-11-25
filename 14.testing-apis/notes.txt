@@ -1,0 +1,23 @@
+
+HTTP is a protocol (set of rules) which allows communication between servers and clients.
+You should always use the secure version of the protocol HTTPS.
+It has request and response with the request coming from the client and response from server.
+
+Request has:
+* Address
+* Request method
+* Headers
+* Body
+
+
+Response has:
+* Status
+* Body
+* Headers
+
+
+
+
+
+
+

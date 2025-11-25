@@ -9,3 +9,6 @@
 09.custom-metrics/node_modules/
 10.tags/node_modules/
 11.custom-tags/node_modules/
+12.groups/node_modules/
+13.k6-structure/node_modules/
+14.testing-apis/node_modules/
