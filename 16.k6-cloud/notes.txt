@@ -1,0 +1,16 @@
+K6 Cloud
+1. Login to k6 cloud (Grafana)
+- to login into k6 cloud use `k6 cloud login`
+- enter your email and password
+
+2. Another approach (using api token)
+- k6 cloud login --token some-token
+= returns
+`Logged in successfully, token saved in /filedirectory/Application Support/loadimpact/k6/config.json`
+- you only do this once after that you will just run your tests
+- run your script just normally but use cloud eg k6 cloud script.js
+
+
+
+
+

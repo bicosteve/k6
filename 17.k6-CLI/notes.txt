@@ -1,0 +1,19 @@
+How To Use K6 CLI
+
+1. One Virtual User : k6 run script.js --vus 1 --duration 10s --iterations 1
+    Short k6 run script.js -u 1 -d 10s -i 1
+2. Insecure Requests
+    k6 run script.js --insecure-skp-tls-verify
+    run this for insecure urls
+3. Export result in JSON format
+    k6 run script.js --summary-export=result.json
+    k6 run script.js --out json=full_result.json exhaustive
+
+4. Web Dashboard
+    K6_WEB_DASHBOARD=true k6 run script.js
+
+
+
+
+
+

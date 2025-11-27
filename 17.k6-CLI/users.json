@@ -1,0 +1,24 @@
+{
+    "users":[
+        {
+            "username":"test_123",
+            "passwrod":"secret_123"
+        },
+        {
+            "username":"test_123",
+            "passwrod":"secret_123"
+        },
+        {
+            "username":"test_123",
+            "passwrod":"secret_123"
+        },
+        {
+            "username":"test_123",
+            "passwrod":"secret_123"
+        },
+        {
+            "username":"test_123",
+            "passwrod":"secret_123"
+        }
+    ]
+}

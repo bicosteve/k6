@@ -1,0 +1,9 @@
+You can use env variables when running k6
+k6 run -e BASE_URL=url test.js
+
+
+
+
+
+
+

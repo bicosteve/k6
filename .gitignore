@@ -12,3 +12,8 @@
 12.groups/node_modules/
 13.k6-structure/node_modules/
 14.testing-apis/node_modules/
+15.test-envs/node_modules/
+16.k6-cloud/node_modules/
+17.k6-CLI/node_modules/
+18.k6-CICD/node_modules/
+19.k6-extras/node_modules/

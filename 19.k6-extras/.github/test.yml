@@ -1,0 +1,33 @@
+name: k6 Load Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+      - 'fix/*'
+      - 'feat/*'
+
+jobs:
+  k6-local:
+    runs-on: ubuntu-latest
+    container: grafana/k6:latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Run k6 locally
+        run: k6 run tests/load_test.js
+
+  k6-cloud:
+    runs-on: ubuntu-latest
+    container: grafana/k6:latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Run k6 in cloud
+        env:
+          K6_CLOUD_TOKEN: ${{ secrets.K6_CLOUD_TOKEN }}
+          K6_PROJECT_ID: ${{ secrets.K6_PROJECT_ID }}
+        run: k6 cloud tests/load_test.js

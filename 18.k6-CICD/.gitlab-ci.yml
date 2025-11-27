@@ -1,0 +1,35 @@
+stages:
+  - test
+
+variables:
+  K6_SCRIPT: ./remote-script.js
+
+
+# Local Test
+k6-local:
+  stage: test
+  image:
+    name: grafana/k6
+    entrypoint: [""]
+  script:
+    - echon "Running k6 locally ..."
+    - k6 run $K6_SCRIPT
+
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+      when: always
+
+# Local Test
+k6-cloud:
+  stage: test
+  image:
+    name: grafana/k6
+    entrypoint: [""]
+  script:
+    - echon "Running k6 in the cloud ..."
+    - k6 cloud $K6_SCRIPT
+
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: always
+

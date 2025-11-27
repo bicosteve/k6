@@ -1,0 +1,11 @@
+K6 CICD
+- If something is wrong, we can communicate with pipelines to show something is wrong.
+-
+- to use cloud, create a token for cloud and set it up in either gitlab or github as secret variable
+- also add project id
+
+
+
+
+
+
